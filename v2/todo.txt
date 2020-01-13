@@ -1,0 +1,17 @@
+- Rush yds
+- Rec yds
+- yards/rec
+- Rec TD
+- Rec 1D
+- Catch %
+
+- Rush TD
+- Rush 1D
+- Rush long
+- Rec lng
+- Y/Att
+- Touch
+- Y/Tch
+
+
+- Avg value
