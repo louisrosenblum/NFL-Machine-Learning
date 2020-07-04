@@ -228,7 +228,7 @@ def player_recur(pos,writer,name,table):
     elif (name == 'Darren Sproles'):
         return None
 
-    if (seasons >= 2):
+    if (seasons >= 1):
         last_season = table[seasons - 1]
         actual = 0
 
@@ -241,15 +241,18 @@ def player_recur(pos,writer,name,table):
                 last_season[20] = 0
             if(last_season[9] == ''):
                 last_season[9] = 0
-            actual = (float(last_season[27])) / 10 + (float(last_season[28]) * 6) - (float(last_season[29]) * 2) + (
-                        float(last_season[15]) * ppr) + (float(last_season[9]) + float(last_season[20]))*ppf
+            if(last_season[14] == ''):
+                last_season[14] = 0
+            print(last_season[14])
+            actual = float(last_season[14])
         if (pos == 'WR'):
             if(last_season[20] == ''):
                 last_season[20] = 0
             if(last_season[11] == ''):
                 last_season[11] = 0
-            actual = (float(last_season[27])) / 10 + (float(last_season[28]) * 6) - (float(last_season[29]) * 2) + (
-                        float(last_season[7]) * ppr) + (float(last_season[11]) + float(last_season[20]))*ppf
+            if(last_season[6] == ''):
+                last_season[6] = 0
+            actual = float(last_season[6])
 
         data.append(name)
         data.append(actual)
@@ -685,7 +688,7 @@ def player_recur(pos,writer,name,table):
 
         writer.writerow(data)
 
-        if (len(table) >= 2):
+        if (len(table) >= 1):
             player_recur(pos,writer, name, table)
         else:
             return None
